@@ -14,7 +14,7 @@ class NavBar extends React.Component {
                     <li><a href="#contact">Contact</a></li>
 
                 </ul>
-                <button type="button">Make a Post</button>
+                <button type="button">Login</button>
             </nav>
         </div>
     }
