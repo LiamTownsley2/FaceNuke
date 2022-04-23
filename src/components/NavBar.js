@@ -6,14 +6,12 @@ class NavBar extends React.Component {
         return <div id="hero">
             <nav>
                 <h2 className="logo">Face<span>Nuke</span></h2>
-                <ul>
+                <h1 className="subhero">Home Page</h1>
+                {/* <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#service">Service</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-
-                </ul>
+                    <li><a href="#about">Contact Us</a></li>
+                    <li><a href="#service">Report Content</a></li>
+                </ul> */}
                 <button type="button">Login</button>
             </nav>
         </div>

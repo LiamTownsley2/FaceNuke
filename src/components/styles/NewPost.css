@@ -20,6 +20,7 @@ button[type="submit"] {
     padding: 20px 40px;
     font-size: 20px;
     width: 40%;
+    margin-bottom: 15px;
 } 
 
 textarea {

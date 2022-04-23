@@ -12,6 +12,14 @@ const posts = [
         likes: 1,
         timestamp: new Date().toISOString(),
         author: 'Liam T.' // should be just an ID!!!!!! use it to cross reference author save in different list
+    },
+    {
+        id: '2',
+        title: 'abc',
+        description: 'cba',
+        likes: 0,
+        timestamp: new Date().toISOString(),
+        author: 'John'
     }
 ];
 
