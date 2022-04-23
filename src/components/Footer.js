@@ -9,15 +9,15 @@ class Footer extends React.Component {
                     <div>
                         <h3>Site Navigation</h3>
                         <ul>
-                            <li><a href="#">Sitemap</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="/sitemap.html">Sitemap</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
                             
                         </ul>
                     </div>
                     <div>
                         <h3>About</h3>
                         <ul>
-                            <li><a href="#">The Code</a></li>
+                            <li><a href="https://github.com/LiamTownsley/FaceNuke">The Code</a></li>
                             <li><a href="https://github.com/LiamTownsley?tab=repositories">More of my Projects</a></li>
                         </ul>
                     </div>
