@@ -1,0 +1,20 @@
+#footer {
+    width: 100%;
+}
+
+.container {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container a {
+    color: #ea1538;
+    font-weight: bolder;
+}
+
+.container a:visited {
+    color: #ea1538;
+    font-weight: 500;
+}
