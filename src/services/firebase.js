@@ -1,6 +1,6 @@
 import {initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 // import { useCollectionData } from "react-firebase-hooks/firestore";
 
 const firebaseConfig = {
