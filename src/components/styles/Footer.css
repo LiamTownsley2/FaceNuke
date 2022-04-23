@@ -11,10 +11,11 @@
 
 .container a {
     color: #ea1538;
+    text-decoration: none;
     font-weight: bolder;
 }
 
-.container a:visited {
-    color: #ea1538;
-    font-weight: 500;
+.container a:hover {
+    color: #bc0f2c;
+    text-decoration: underline;
 }
