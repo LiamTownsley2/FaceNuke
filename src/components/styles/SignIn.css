@@ -1,0 +1,24 @@
+#signIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: #673AB7;
+    padding-bottom: 15px;
+}
+#signIn h1 {
+    margin-bottom: 10px;
+}
+p {
+    margin: 5px;
+}
+#signIn p span {
+    color: #F44336;
+    font-weight: bold;
+}
+
+#signIn p span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

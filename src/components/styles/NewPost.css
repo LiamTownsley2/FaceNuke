@@ -25,17 +25,30 @@ button[type="submit"] {
 
 textarea {
     border: none;
-    border-bottom: 4px solid #ea1538;
-    border-right: 4px solid #ea1538;
-    background-color: rgba(0,0,0,0.6);
     color: white;
     width: 40%;
     padding: 10px;
-    border-radius: 10px;
     resize: none;
-    height: 175px;
     font-size: 18px;
+}
+
+.form-primary {
+    border-radius: 10px 10px 0px 0px;
+    border-right: 4px solid #ea1538;
+    height: 45px;
+    background-color: rgba(0,0,0,0.6);
+    padding: 13px 0;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.form-secondary {
+    border-radius: 0px 0px 10px 10px;
     margin-bottom: 25px;
+    height: 175px;
+    border-right: 4px solid #ea1538;
+    border-bottom: 4px solid #ea1538;
+    background-color: rgba(0,0,0,0.4);
 }
 
 textarea:focus {

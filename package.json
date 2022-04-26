@@ -1,6 +1,7 @@
 {
   "name": "socialsite",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -13,6 +14,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-firebase-hooks": "^5.0.3",
+    "react-google-button": "^0.7.2",
     "react-scripts": "5.0.1",
     "short-time-ago": "^2.0.0",
     "web-vitals": "^2.1.4"
@@ -40,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0"
   }
 }

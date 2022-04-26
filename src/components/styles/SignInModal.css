@@ -1,0 +1,95 @@
+#signinmodal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#signinmodal-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #161616;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    border-right: 4px solid #ea1538;
+    border-bottom: 4px solid #ea1538;
+    text-align: center;
+}
+
+#signinmodal-child>button {
+    border: none;
+    height: 50px;
+    width: 240px;
+    border-radius: 1px;
+    font-size: medium;
+    transition: background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;
+    margin: 5px;
+}
+
+#demo {
+    background-color: #ea1538;
+    color: white;
+    box-shadow: rgb(0 0 0 / 25%) 0px 2px 4px 0px;
+}
+
+#demo:hover {
+    cursor: pointer;
+    box-shadow: rgba(232, 65, 93, 0.3) 0px 0px 3px 3px;
+}
+
+#nevermind-link {
+    padding: 30px;
+    color: red;
+    text-decoration: none;
+}
+
+#signin-buttons {
+    margin-top: 20px;
+}
+
+#signin-buttons > div {
+    color: rgb(255, 255, 255);
+    height: 50px;
+    width: 240px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    line-height: 48px;
+    display: block;
+    border-radius: 1px;
+    transition: background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;
+    font-family: Roboto, arial, sans-serif;
+    cursor: pointer;
+    user-select: none;
+    margin: 10px;
+}
+
+#github-child {
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    /* background-color: #161616; */
+    display: block;
+    margin-top: 1px;
+    margin-left: 1px;
+    float: left;
+    border-radius: 1px;
+    white-space: nowrap;
+}
+
+#github {
+    background-color: rgb(32, 32, 32);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px 0px;
+}
+
+#github:hover {
+    box-shadow: rgba(70, 70, 70, 0.3) 0px 0px 3px 3px;
+}

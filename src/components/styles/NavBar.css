@@ -3,11 +3,6 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-/* .hero {
-    height: 100vh;
-    width: 100%;
-} */
-
 nav {
     display: flex;
     align-items: center;
@@ -42,7 +37,7 @@ nav ul li a:hover {
     transition: .3s;
 }
 
-button {
+nav > button {
     border: none;
     background: #ea1538;
     padding: 12px 30px;
@@ -53,11 +48,31 @@ button {
     transition: .4s;
 }
 
-button:hover {
+nav > button:hover {
     transform: scale(1.03);
     cursor: pointer;
 }
 
 .subhero {
     color: white;
+}
+
+#user_account {
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+#user-logged {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+    padding: 10px;
+}
+
+#user-logged:hover {
+    background-color: rgba(0,0,0,0.4);
+    cursor: pointer;
 }
