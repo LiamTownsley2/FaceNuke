@@ -2,7 +2,7 @@ import './App.css';
 
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import React, { useEffect } from "react";
+import React from "react";
 import NavBar from './components/NavBar.js';
 import NewPost from './components/NewPost.js';
 import Wall from './components/Wall.js';
@@ -10,7 +10,7 @@ import Footer from './components/Footer.js';
 import SignIn from './components/SignIn.js';
 import SignInModal from './components/SignInModal.js';
 import { authentication } from './services/firebase-config';
-import { getPosts } from './services/firebase';
+// import { getPosts } from './services/firebase';
 
 import logo from './images/logo.png';
 

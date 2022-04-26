@@ -49,13 +49,13 @@ const SignInModal = ({ display, toggle }) => {
 
                 <div id="github" onClick={signInWithGithub}>
                     <div id="github-child">
-                        <img src={GitHubLogo}></img>
+                        <img src={GitHubLogo} alt="GitHub Logo"></img>
                     </div>
                     <span>Sign in with Github</span>
                 </div>
                 <div id="demo" onClick={signInDemo}>Demo User</div>
             </div>
-            <a href="#" onClick={toggle} id="nevermind-link">Nevermind, I don't want to sign in.</a>
+            <p onClick={toggle} id="nevermind-link">Nevermind, I don't want to sign in.</p>
 
         </div>
     </div>;

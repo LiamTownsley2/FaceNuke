@@ -1,5 +1,4 @@
 import React from "react";
-import { authentication } from "../services/firebase-config";
 
 import './styles/SignIn.css';
 

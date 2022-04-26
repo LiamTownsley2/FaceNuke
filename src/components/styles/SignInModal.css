@@ -24,7 +24,7 @@
     text-align: center;
 }
 
-#signinmodal-child>button {
+#signin-buttons > button {
     border: none;
     height: 50px;
     width: 240px;
@@ -49,6 +49,10 @@
     padding: 30px;
     color: red;
     text-decoration: none;
+}
+
+#nevermind-link:hover {
+    cursor: pointer;
 }
 
 #signin-buttons {

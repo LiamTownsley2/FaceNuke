@@ -18,6 +18,7 @@ const NavBar = ({logged_in, toggle}) => {
                     src={authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous}
                     id="user_account"
                     rel="noreferrer"
+                    alt="Your Avatar"
                 />
                 <h2>{authentication.currentUser.displayName ? authentication.currentUser.displayName : 'Demo User'}</h2>
 

@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, limit, orderBy, query, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, limit, orderBy, query, serverTimestamp } from 'firebase/firestore';
 import { authentication, db } from './firebase-config';
 
 // import { getAnalytics } from "firebase/analytics";
@@ -9,7 +9,7 @@ import { authentication, db } from './firebase-config';
 
 
 // const analytics = getAnalytics(app);
-const users = collection(db, 'users')
+// const users = collection(db, 'users')
 const posts = collection(db, 'posts')
 
 
@@ -29,4 +29,8 @@ export const addPost = async (post) => {
             timestamp: serverTimestamp()
         })
     }
+}
+
+export const updateData = async () => {
+    
 }
