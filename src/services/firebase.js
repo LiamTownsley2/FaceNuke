@@ -1,4 +1,4 @@
-import { addDoc, collection, limit, orderBy, query, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, getDocs, limit, orderBy, query, serverTimestamp } from 'firebase/firestore';
 import { authentication, db } from './firebase-config';
 
 // import { getAnalytics } from "firebase/analytics";
@@ -14,13 +14,19 @@ const posts = collection(db, 'posts')
 
 
 export const getPosts = async () => {
-    return query(posts, orderBy('timestamp'), limit(5))
+    const post = await getDocs(query(posts, orderBy('timestamp', 'desc'), limit(5)));
+    const post_arr = [];
+    post.forEach((doc) => {
+        post_arr.push(doc.data());
+      });
+      return post_arr;
 };
 
 export const addPost = async (post) => {
     const user = authentication.currentUser;
     if (!user.isAnonymous) {
         addDoc(posts, {
+            postId: user.uid + Math.floor(Math.random() * 9999999).toString(),
             uid: user.uid,
             title: post.title,
             description: post.description,

@@ -17,7 +17,7 @@ const Wall = ({ posts }) => {
         </div> : <br />}
 
         <div id="post-list">
-            {posts.slice(0, 5).map(p => <Post key={p.id} props={p} />)}
+            {posts.slice(0, 5).map(p => <Post key={p.postId} props={p} />)}
         </div>
     </div>
 }

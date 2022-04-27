@@ -2,7 +2,7 @@ import './App.css';
 
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from './components/NavBar.js';
 import NewPost from './components/NewPost.js';
 import Wall from './components/Wall.js';
@@ -13,6 +13,7 @@ import { authentication } from './services/firebase-config';
 // import { getPosts } from './services/firebase';
 
 import logo from './images/logo.png';
+import { getPosts } from './services/firebase';
 
 export let posts = [{
   id: '1',
@@ -20,28 +21,36 @@ export let posts = [{
   description: 'This is a post to demonstrate where your posts will show up!',
   timestamp: new Date().toISOString(),
   author: 'Liam Townsley - System',
+  postId: 'DEFAULT_POST',
   avatarURL: logo
 }];
 
 function App() {
+  useEffect(() => {
+    loadPosts()
+  }, []);
+
   const [post, setPost] = React.useState(posts);
   const [displayModal, setDisplayModal] = React.useState(false);
   const [user] = useAuthState(authentication);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const posts = getPosts()
-  //     setPost(posts);
-  //   })();
-  // })
-
   const update = (newPosts) => {
-    posts = [newPosts, ...posts]
-    setPost([...posts])
+    let post_arr = [];
+    if (newPosts?.length > 1) {
+      post_arr = [...newPosts, ...post]
+    } else {
+      post_arr = [newPosts, ...post]
+    }
+    setPost([...post_arr])
   }
 
   const toggleModal = () => {
     setDisplayModal(!displayModal);
+  }
+
+  const loadPosts = async () => {
+    const posts = await getPosts();
+    update([...posts]);
   }
 
   return (
