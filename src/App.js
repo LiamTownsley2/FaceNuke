@@ -30,7 +30,7 @@ function App() {
   const [displayModal, setDisplayModal] = React.useState(false);
   const [user] = useAuthState(authentication);
 
-  const update = useCallback((newPosts) => {
+  const update = (newPosts) => {
     let post_arr = [];
     if (newPosts?.length > 1) {
       post_arr = [...newPosts, ...post]
@@ -38,23 +38,18 @@ function App() {
       post_arr = [newPosts, ...post]
     }
     setPost([...post_arr])
-  }, [setPost, post]);
 
-  const loadPosts = useCallback(async () => {
+  const loadPosts = async () => {
     const posts = await getPosts();
     update([...posts]);
-  }, [update]);
+  }
 
   const toggleModal = () => {
     setDisplayModal(!displayModal);
   }
 
-  useEffect(() => {
-    loadPosts()
-  }, [loadPosts]);
-
   return (
-    <div className="app">
+    <div className="app" onLoad={loadPosts}>
       <SignInModal display={displayModal} toggle={toggleModal} />
       <NavBar toggle={toggleModal} logged_in={user ? true : false} />
       {user ? <NewPost onUpdate={update} toggle={toggleModal} /> : <SignIn />}
