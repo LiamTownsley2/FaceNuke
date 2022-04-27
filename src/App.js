@@ -2,7 +2,7 @@ import './App.css';
 
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import NavBar from './components/NavBar.js';
 import NewPost from './components/NewPost.js';
 import Wall from './components/Wall.js';
@@ -38,6 +38,7 @@ function App() {
       post_arr = [newPosts, ...post]
     }
     setPost([...post_arr])
+  }
 
   const loadPosts = async () => {
     const posts = await getPosts();
