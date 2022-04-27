@@ -2,7 +2,7 @@ import './App.css';
 
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import NavBar from './components/NavBar.js';
 import NewPost from './components/NewPost.js';
 import Wall from './components/Wall.js';
@@ -30,7 +30,7 @@ function App() {
   const [displayModal, setDisplayModal] = React.useState(false);
   const [user] = useAuthState(authentication);
 
-  const update = (newPosts) => {
+  const update = useCallback((newPosts) => {
     let post_arr = [];
     if (newPosts?.length > 1) {
       post_arr = [...newPosts, ...post]
@@ -38,19 +38,23 @@ function App() {
       post_arr = [newPosts, ...post]
     }
     setPost([...post_arr])
-  }
+  }, [post]);
 
-  const loadPosts = async () => {
+  const loadPosts = useCallback(async () => {
     const posts = await getPosts();
     update([...posts]);
-  }
+  }, [update]);
+
+  useEffect(() => {
+    loadPosts();
+  }, [loadPosts])
 
   const toggleModal = () => {
     setDisplayModal(!displayModal);
   }
 
   return (
-    <div className="app" onLoad={loadPosts}>
+    <div className="app">
       <SignInModal display={displayModal} toggle={toggleModal} />
       <NavBar toggle={toggleModal} logged_in={user ? true : false} />
       {user ? <NewPost onUpdate={update} toggle={toggleModal} /> : <SignIn />}

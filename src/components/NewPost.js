@@ -14,13 +14,21 @@ import { addPost } from "../services/firebase";
 //     createPost('test123');
 // }
 
+function magic(input) {
+    input = input.replace(/&/g, '&amp;');
+    input = input.replace(/</g, '&lt;');
+    input = input.replace(/>/g, '&gt;');
+    return input;
+}
+
 const NewPost = ({onUpdate}) => {
     const handleUpdate = (e) => {
         e.preventDefault();
+
         onUpdate({
             id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
             title: e.target[0].value,
-            description: e.target[1].value,
+            description: magic(e.target[1].value),
             avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
             timestamp: new Date().toISOString(),
             author: authentication.currentUser.displayName ? authentication.currentUser.displayName : 'Demo User' 
@@ -28,15 +36,12 @@ const NewPost = ({onUpdate}) => {
 
           addPost({
             id: `${authentication.currentUser.uid}-${Math.floor(100000 + Math.random() * 900000)}`,
-            title: e.target[0].value,
-            description: e.target[1].value,
+            title: magic(e.target[0].value),
+            description: magic(e.target[1].value),
             avatarURL: authentication.currentUser.photoURL ? authentication.currentUser.photoURL : anonymous,
             timestamp: new Date().toISOString(),
             author: authentication.currentUser.displayName ? authentication.currentUser.displayName : 'Demo User' 
           })
-
-        //   createPost("test")
-        // console.log(e.target[0].value);
     }
 
     return <div id="newpost">

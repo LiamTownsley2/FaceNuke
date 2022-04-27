@@ -18,8 +18,8 @@ export const getPosts = async () => {
     const post_arr = [];
     post.forEach((doc) => {
         post_arr.push(doc.data());
-      });
-      return post_arr;
+    });
+    return post_arr;
 };
 
 export const addPost = async (post) => {
@@ -38,5 +38,5 @@ export const addPost = async (post) => {
 }
 
 export const updateData = async () => {
-    
+
 }
