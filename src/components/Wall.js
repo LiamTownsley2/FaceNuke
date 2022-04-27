@@ -1,10 +1,6 @@
 import React from "react";
 import Post from './Post.js';
 import './styles/Wall.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
-import { authentication } from "../services/firebase-config.js";
-
 
 const Wall = ({ posts }) => {
     return <div id="wall">
