@@ -2,7 +2,7 @@ import './App.css';
 
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import NavBar from './components/NavBar.js';
 import NewPost from './components/NewPost.js';
 import Wall from './components/Wall.js';
@@ -10,10 +10,8 @@ import Footer from './components/Footer.js';
 import SignIn from './components/SignIn.js';
 import SignInModal from './components/SignInModal.js';
 import { authentication } from './services/firebase-config';
-// import { getPosts } from './services/firebase';
 
 import logo from './images/logo.png';
-import { getPosts } from './services/firebase';
 
 export let posts = [{
   id: '1',
@@ -40,14 +38,14 @@ function App() {
     setPost([...post_arr])
   }, [post]);
 
-  const loadPosts = useCallback(async () => {
-    const posts = await getPosts();
-    update([...posts]);
-  }, [update]);
+  // const loadPosts = useCallback(async () => {
+  //   const posts = await getPosts();
+  //   update([...posts]);
+  // }, [update]);
 
-  useEffect(() => {
-    loadPosts();
-  }, [loadPosts])
+  // useEffect(() => {
+  //   loadPosts();
+  // }, [loadPosts])
 
   const toggleModal = () => {
     setDisplayModal(!displayModal);
